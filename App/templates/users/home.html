@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index </title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqamO6cGnLqXa5S9vPNlMpvTvn501B5_4OlQ&s" rel="icon">
+  <link href="{%static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{%static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{%static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{%static 'assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Gp
+  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+  * Updated: Aug 15 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<style>
+        .btn-getstarted {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            border-color: #007bff;
+            
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-getstarted:hover {
+            background-color: 	#ffcf40;
+            color: black;
+            border-color: #004080;
+        }
+        
+        .btn-getstarted:active {
+            background-color: #004080;
+            border-color: #007bff;
+        }
+      .nav-link {
+          border: 2px solid transparent;
+          border-radius: 0.5rem;
+          transition: all 0.3s ease;
+      }
+      .nav-link.active {
+          background-color: #f0f0f0;
+          border-color: #007bff;
+      }
+      .nav-link:hover {
+          background-color: #f8f9fa;
+          border-color: #007bff;
+      }
+      .btn-primary {
+          background-color: #007bff;
+          border-color: #007bff;
+          transition: background-color 0.3s, border-color 0.3s;
+      }
+      .btn-primary:hover {
+          background-color: #0056b3;
+          border-color: #004085;
+      }
+</style>
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename"  style="color: darkgoldenrod;">Welcome to {{user.username.title|default:'Guest'}}</h1>
+        <span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          {% if user.is_authenticated  %}
+          <li><a href="/" class="active">Home<br></a></li>
+          <li><a href="#about">About</a></li>
+          <li class="dropdown"><a href="#"><span>Dataset Report</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>          
+              
+              <li><a  href="{% url 'Basic' %}">Basic Report</a></li>
+              <li><a href="{% url 'Metrics' %}">Metrics Report</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Databases</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>          
+              
+              <li><a  href="{% url 'Database' %}">DL_Database</a></li>
+              <li><a href="{% url 'ML_DB' %}">ML_Database</a></li>
+              
+            </ul>
+          </li>
+          
+          <li><a  href="{% url 'users-profile' %}">Profile </a></li>
+          
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="{% url 'logout_view' %}">Logout</a>
+      {% endif %}
+    </div>
+  </header>
+
+  <main class="main">
+
+    
+
+    </section> 
+    {% if user.is_authenticated %}
+    <section id="hero" class="hero section dark-background">
+
+      <img src="https://dtdharamadlani.com/wp-content/uploads/2022/08/PCOD-Vs-PCOS-scaled-1.jpg" alt="" data-aos="fade-in">
+
+      <div class="container" >
+          <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-xl-6 col-lg-8 offset-xl-6 offset-lg-4 text-right">
+              <h6>Prediction of </h6>
+              <h2>PCOS Classifications</h2>
+              <p>Welcome to our PCOS Classifications using machine learning </p><br><br>
+            
+              <a class="btn-getstarted" href="{% url 'Deploy_9' %}">Model Prediction</a>
+              <a class="btn-getstarted" href="{% url 'Deploy_8' %}">Model Detection</a>
+          </div>
+          
+          </div>
+    
+
+
+        <div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <i class="bi bi-binoculars"></i>
+              <h3><a href="">PCOS Affected</a></h3>
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-box">
+              <i class="bi bi-bullseye"></i>
+              <h3><a href="">PCOS Normal</a></h3>
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <i class="bi bi-fullscreen-exit"></i>
+              <h3><a href="">PCOD Affected</a></h3>
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon-box">
+              <i class="bi bi-card-list"></i>
+              <h3><a href="">PCOD Normal</a></h3>
+            </div>
+          </div>
+          
+          </div>
+        </div>
+        
+       
+
+    </section>
+    {% else %}
+    <section id="hero" class="hero section dark-background"> 
+
+      <img src="https://img.freepik.com/free-photo/front-view-doctor-holding-anatomic-model_23-2149351652.jpg?w=740&t=st=1724742572~exp=1724743172~hmac=465fd1b91a0e945c0ea2d52d0b833b8973ab278d2768f0bbc795c5232ecbae33" alt="" data-aos="fade-in">
+
+      <div class="container">
+          <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-xl-6 col-lg-8 offset-xl-6 offset-lg-4 text-right">
+                <h2>Welcome New User!</h2>
+                <p>To get started, please <a href="/login">log in</a> or <a href="/register">register</a> if you don't have an account yet.</p>
+                
+              <a class="btn-getstarted" href="{% url 'users-register' %}">Register</a>
+              <a class="btn-getstarted" href="{% url 'login' %}">Login</a>
+
+            </div>
+          </div>
+    
+
+
+          
+        </div>
+        
+       
+
+    </section>
+    {% endif %}
+    <!-- /Hero Section -->
+    {% if user.is_authenticated %}
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+    
+        <div class="row gy-4">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="https://img.freepik.com/premium-vector/pcos-symptoms-polycystic-ovary-syndrome-medical-infographic-vector-illustration_980832-728.jpg" class="img-fluid" alt="PCOS Illustration">
+          </div>
+          <div class="col-lg-6 order-2 order-lg-1 content">
+            <h3>What is PCOS?</h3>
+            <p class="fst-italic">
+                Polycystic Ovary Syndrome (PCOS) is a hormonal disorder that affects people with ovaries, often during their reproductive years. It is characterized by irregular menstrual cycles, elevated levels of male hormones (androgens), and the presence of cysts in the ovaries.
+            </p>
+            <ul>
+                <li><i class="bi bi-check2-all"></i> <span>Common symptoms include irregular periods, acne, weight gain, and excessive hair growth.</span></li>
+                <li><i class="bi bi-check2-all"></i> <span>PCOS can also lead to complications such as infertility, diabetes, and cardiovascular issues.</span></li>
+                <li><i class="bi bi-check2-all"></i> <span>Management often includes lifestyle changes, medications to regulate menstrual cycles and hormones, and sometimes fertility treatments.</span></li>
+            </ul>
+            <p>
+                PCOS can be diagnosed through a combination of physical exams, blood tests to measure hormone levels, and ultrasound imaging to check for ovarian cysts. Early diagnosis and management are important to address symptoms and prevent long-term health issues. If you experience symptoms or have concerns, consult a healthcare provider for appropriate evaluation and care.
+            </p>
+        </div>
+        
+        </div>
+    
+      </div>
+    
+    </section><!-- /About Section -->
+    
+    <!-- /Clients Section -->
+    
+    <!-- Features Section -->
+    <section id="features" class="features section">
+    
+      <div class="container">
+        <h3>Understanding PCOS</h3>
+        <div class="row gy-4">
+          <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://img.freepik.com/premium-vector/medical-infographic-gynecology-disease-polycystic-ovary-syndrome-pcos-vector-illustration_980832-732.jpg" alt="PCOS Symptoms">
+          </div>
+          <div class="col-lg-6">
+            <div class="features-item d-flex ps-0 ps-lg-3 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-archive flex-shrink-0"></i>
+              <div>
+                <h4>Introduction to PCOS</h4>
+                <p>PCOS is a common hormonal disorder that affects the ovaries, leading to irregular periods and elevated androgen levels. It can impact various aspects of health, including reproductive and metabolic functions.</p>
+              </div>
+            </div><!-- End Features Item-->
+    
+            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-basket flex-shrink-0"></i>
+              <div>
+                <h4>Symptoms of PCOS</h4>
+                <p>Symptoms of PCOS may include irregular menstrual cycles, acne, weight gain, excessive hair growth, and thinning hair. These symptoms can vary widely among individuals.</p>
+              </div>
+            </div><!-- End Features Item-->
+    
+            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-broadcast flex-shrink-0"></i>
+              <div>
+                <h4>Causes and Risk Factors</h4>
+                <p>The exact cause of PCOS is unknown, but factors such as genetics, insulin resistance, and inflammation may contribute. Risk factors include a family history of PCOS and obesity.</p>
+              </div>
+            </div><!-- End Features Item-->
+    
+            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-camera-reels flex-shrink-0"></i>
+              <div>
+                <h4>Diagnosis and Treatment</h4>
+                <p>PCOS is diagnosed through a combination of medical history, physical examination, blood tests, and ultrasound. Treatment may include lifestyle changes, hormonal medications, and, if needed, fertility treatments.</p>
+              </div>
+            </div><!-- End Features Item-->
+    
+          </div>
+        </div>
+      </div>
+    
+    </section><!-- End Features Section -->
+    
+    <!-- /Features Section -->
+
+    <!-- Services Section -->
+    
+  
+  <!-- /Services Section -->
+
+    <!-- Call To Action Section -->
+    <!-- Call To Action Section -->
+
+<script>
+  // Data for each liver condition
+  const liverConditions = {
+    normal: {
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs-AxR4PsZgXqmt4oNOejRkBOl4_rAUy4ZrQ&s',
+      title: 'Normal Liver',
+      description: 'The liver is a vital organ responsible for detoxifying the blood, producing bile for digestion, and regulating metabolism. Maintaining liver health involves a balanced diet, regular exercise, and avoiding excessive alcohol consumption. Common liver issues include fatty liver disease, hepatitis, and cirrhosis. Regular check-ups and healthy lifestyle choices are key to preventing liver diseases and ensuring optimal liver function.'
+    },
+    fatty: {
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN0oqC4lGxUhz8ra61O9VebOeoOT7QMZN-FQ&s',
+      title: 'Fatty Liver',
+      description: 'Fatty liver disease, or hepatic steatosis, occurs when excess fat accumulates in the liver cells. This condition can result from obesity, alcohol consumption, or metabolic disorders. Early intervention with lifestyle changes, such as a balanced diet and regular exercise, is crucial for managing and reversing the disease. If left untreated, it may progress to more severe liver conditions, including cirrhosis or liver cancer.'
+    },
+    fibrosis: {
+      image: 'data:image/jpeg;base64,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',
+      title: 'Fibrosis Liver',
+      description: 'Fibrosis of the liver is a progressive condition where excessive scar tissue forms in the liver due to chronic inflammation. This scarring can impair liver function and lead to serious complications if left untreated. Early detection and management are crucial to prevent progression to cirrhosis or liver failure. Common causes include chronic hepatitis infections, alcohol abuse, and certain autoimmune diseases.'
+    },
+    cirrhosis: {
+      image: 'data:image/jpeg;base64,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',
+      title: 'Cirrhosis Liver',
+      description: 'Cirrhosis is the late stage of scarring (fibrosis) of the liver caused by many forms of liver diseases and conditions.'
+    }
+  };
+
+  function updateContent(condition) {
+    const content = liverConditions[condition];
+    document.getElementById('stats-image').src = content.image;
+    document.getElementById('stats-title').textContent = content.title;
+    document.getElementById('stats-description').textContent = content.description;
+  }
+</script>
+<!-- /Stats Section -->
+
+    <!-- Testimonials Section -->
+    <!-- /Testimonials Section -->
+
+    <!-- Team Section -->
+   
+    <!-- Contact Section -->
+    <!-- /Contact Section -->
+
+  </main>
+ {% endif %}
+  
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{%static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{%static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{%static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{%static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+
+<style>
+    /* Container Styles */
+.container {
+    background-color: #f8f9fa; /* Light background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Heading Styles */
+h2 {
+    color: #343a40; /* Darker text */
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Table Styles */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+.table th {
+    color: #ffffff; /* White text */
+    background-color: #007bff; /* Bootstrap primary color */
+    font-family: 'Open Sans', Arial, sans-serif;
+    text-align: center;
+    padding: 12px;
+}
+
+.table td {
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: #212529; /* Darker text */
+    text-align: center;
+    padding: 12px;
+    vertical-align: middle;
+    background-color: #ffffff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #e9ecef; /* Light gray for odd rows */
+}
+
+.table img {
+    border-radius: 50%; /* Rounded avatar images */
+    border: 2px solid #007bff; /* Border around avatars */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .table th, .table td {
+        padding: 8px;
+        font-size: 14px; /* Smaller text on mobile */
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+}
+
+</style>
+    <div class="container my-3">
+        <h2>Profile List</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Avatar</th>
+                    <th>Bio</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for profile in profiles %}
+                    <tr>
+                        <td>{{ profile.user.username }}</td>
+                        <td>{{ profile.user.email }}</td>
+                        <td><img src="{{ profile.avatar.url }}" alt="Avatar" style="width: 50px; height: 50px;"/></td>
+                        <td>{{ profile.bio }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="4">No profiles found.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>

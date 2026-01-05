@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCOS OUTPUT</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700">
+    <style>
+        :root {
+            --bg-color: rgb(240, 245, 250);
+            --primary-color: rgb(31, 122, 140);
+            --secondary-color: rgb(191, 219, 247);
+            --accent-color: rgb(198, 136, 102);
+            --white: rgb(255, 255, 255);
+            --dark: rgb(2, 43, 58);
+            --light-grey: rgb(225, 229, 242);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--bg-color);
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 0 15px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        ul.list-disc {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        ul.list-outside {
+            list-style-position: outside;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 0;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            border: 1px solid var(--light-grey);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            flex: 1 1 calc(33.333% - 20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img.round {
+            border-radius: 50%;
+            border: 2px solid var(--accent-color);
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin: 15px 0;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin: 10px 0;
+            color: var(--primary-color);
+        }
+
+        .card-content {
+            padding: 0 15px;
+            font-size: 0.9rem;
+        }
+
+        button.primary {
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 4px;
+            color: var(--white);
+            font-weight: 500;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button.primary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        button.primary.ghost {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        button.primary.ghost:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* Animation */
+        .animated-image {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: 20px auto;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.8;
+            }
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            border: 1px solid var(--light-grey);
+            padding: 10px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        table tr:nth-child(even) {
+            background-color: var(--light-grey);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+
+        a.top {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #053777;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin: 20px 0;
+        }
+
+        a.top:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .video-container {
+            margin-top: 20px;
+        }
+        .video-container iframe {
+            width: 100%;
+            height: 315px;
+            border: 0;
+        }
+        .image-container {
+    text-align: right; /* Aligns image to the right of the container */
+}
+
+.right-image {
+    padding-right: 20px; /* Adds space to the right of the image */
+}
+
+    </style>
+</head>
+<body>
+    <a href="/" class="top">Back to Home</a>
+
+    {% if prediction_text == 'YES_PCOS_FOUND' %}
+    <br><br>
+    <div class="container">
+        <center><h1>Yes, Polycystic Ovary Syndrome (PCOS) Found</h1></center><br>
+        <div class="image-container">
+            <img src="https://thumbs.dreamstime.com/b/symptoms-polycystic-ovary-syndrome-twelve-symptoms-polycystic-ovary-syndrome-162323484.jpg" alt="PCOS Image" style="max-width: 100%; height: auto; margin-right: 200px;">
+        </div>
+        <h2>Description</h2>
+        <p>Polycystic Ovary Syndrome (PCOS) is a common hormonal disorder affecting women of reproductive age. It is characterized by irregular menstrual periods, excess androgen levels, and polycystic ovaries. Women with PCOS may experience symptoms such as acne, hirsutism (excessive hair growth), and weight gain.</p>
+        
+        <h2>Prevention</h2>
+        <ul>
+            <li>Maintain a Healthy Weight: Regular exercise and a balanced diet can help manage symptoms and reduce the risk of developing related conditions like diabetes.</li>
+            <li>Balanced Diet: Focus on a diet rich in fiber, lean proteins, and healthy fats while limiting processed foods and sugars.</li>
+            <li>Regular Check-ups: Regular visits to your healthcare provider can help monitor and manage symptoms effectively.</li>
+        </ul>
+
+        <h2>Precautions</h2>
+        <ul>
+            <li>Monitor Blood Sugar Levels: Women with PCOS are at higher risk of developing insulin resistance, so regular monitoring is important.</li>
+            <li>Avoid Smoking: Smoking can exacerbate symptoms and increase the risk of related health issues.</li>
+            <li>Manage Stress: High stress levels can worsen PCOS symptoms, so practicing stress management techniques is beneficial.</li>
+        </ul>
+
+        <h2>Treatment</h2>
+        <ul>
+            <li>Medications: Commonly prescribed medications include birth control pills to regulate menstrual cycles, anti-androgens for acne and hair growth, and metformin for insulin resistance.</li>
+            <li>Hormonal Therapy: Hormone therapy can help regulate menstrual cycles and manage symptoms.</li>
+            <li>Lifestyle Changes: Incorporating regular physical activity and a healthy diet can significantly improve symptoms.</li>
+        </ul>
+
+        <h2>Causes</h2>
+        <p>The exact cause of PCOS is not known, but it is believed to be related to hormonal imbalances and genetic factors. Insulin resistance and elevated androgen levels are commonly associated with the condition.</p>
+
+        <h2>Effects</h2>
+        <ul>
+            <li>Infertility: PCOS can affect ovulation, making it difficult to conceive.</li>
+            <li>Type 2 Diabetes: Women with PCOS are at higher risk of developing insulin resistance and type 2 diabetes.</li>
+            <li>Cardiovascular Issues: Increased risk of heart disease due to associated risk factors such as obesity and hypertension.</li>
+        </ul>
+
+        <h2>Exercise</h2>
+        <ul>
+            <li>Aerobic Exercise: Activities such as walking, cycling, and swimming can help improve insulin sensitivity and support weight management.</li>
+            <li>Strength Training: Incorporating strength training exercises can enhance muscle mass and metabolism.</li>
+            <li>Consistency: Aim for at least 150 minutes of moderate exercise per week for optimal benefits.</li>
+        </ul>
+
+        <h2>Diet</h2>
+        <ul>
+            <li>High-Fiber Foods: Include fruits, vegetables, and whole grains to help manage insulin levels.</li>
+            <li>Lean Proteins: Opt for sources like chicken, fish, and legumes to support overall health.</li>
+            <li>Healthy Fats: Incorporate nuts, seeds, and avocados while avoiding excessive saturated and trans fats.</li>
+        </ul>
+
+        <h2>Additional Details</h2>
+        <ul>
+            <li><strong>Emotional Well-being:</strong> PCOS can affect mental health, leading to anxiety and depression. Support from mental health professionals may be beneficial.</li>
+            <li><strong>Support Groups:</strong> Joining support groups can provide valuable emotional support and practical advice from others with PCOS.</li>
+            <li><strong>Regular Monitoring:</strong> Ongoing evaluation by a healthcare provider is crucial for managing the condition and adjusting treatment as needed.</li>
+        </ul>
+
+        <div class="image-container">
+            <img src="https://www.visiblebody.com/hs-fs/hubfs/cysts-label-pcos.gif?width=515&height=290&name=cysts-label-pcos.gif" alt="PCOS Image" style="max-width: 100%; height: auto; margin-right: 300px;">
+        </div>
+    </div>
+       
+
+
+    {% elif prediction_text == 'NO_PCOS_NOT_FOUND' %}
+    <br><br>
+    <div class="container">
+        <center><h1>No Polycystic Ovary Syndrome (PCOS)</h1></center><br>
+        <div class="image-container">
+            <img src="https://nutritionfoundation.org.nz/wp-content/uploads/2022/03/Healthy-Plate-Model-NZNF-logo.png" alt="PCOS-Free Image" style="max-width: 100%; height: auto; margin-right: 200px;">
+        </div>
+        <h2>Description</h2>
+        <p>Polycystic Ovary Syndrome (PCOS) is a common hormonal disorder, but when PCOS is not present, women generally experience regular menstrual cycles and have normal levels of androgens (male hormones). Absence of PCOS means no cysts are present on the ovaries, and symptoms associated with PCOS, such as acne, hirsutism (excessive hair growth), and weight gain, are not observed.</p>
+    
+        <h2>Maintaining Health</h2>
+        <ul>
+            <li><strong>Regular Check-ups:</strong> Continue with routine gynecological exams to monitor reproductive health and ensure that symptoms of PCOS do not develop.</li>
+            <li><strong>Healthy Lifestyle:</strong> Maintain a balanced diet and regular exercise to support overall well-being and prevent future health issues.</li>
+            <li><strong>Monitor Symptoms:</strong> Be aware of any changes in your menstrual cycle or hormonal balance and consult a healthcare provider if necessary.</li>
+        </ul>
+    
+        <h2>Benefits of Not Having PCOS</h2>
+        <ul>
+            <li><strong>Regular Menstrual Cycles:</strong> Absence of PCOS typically means regular, predictable menstrual cycles, which can be beneficial for reproductive planning.</li>
+            <li><strong>Reduced Risk of Related Conditions:</strong> Women without PCOS may have a lower risk of developing related conditions such as diabetes, heart disease, and endometrial cancer.</li>
+            <li><strong>Improved Quality of Life:</strong> Without the symptoms of PCOS, individuals may experience fewer physical and emotional challenges, leading to an improved quality of life.</li>
+        </ul>
+    
+        <h2>Additional Information</h2>
+        <ul>
+            <li><strong>Health Monitoring:</strong> Even without PCOS, it’s important to maintain regular health screenings and consultations with healthcare providers.</li>
+            <li><strong>Support Resources:</strong> Access to resources and support networks can still be valuable for general health and wellness.</li>
+            <li><strong>Wellness Strategies:</strong> Continue practicing healthy lifestyle habits to support overall health and prevent other potential health issues.</li>
+        </ul>
+    
+        <div class="image-container">
+            <img src="https://images.nextory.com/9781518910821.jpeg?fit=clip&auto=format&w={$width}" alt="PCOS-Free Details Image" style="max-width: 100%; height: auto; margin-right: 300px;">
+        </div>
+    </div>
+    
+        
+    {% endif %}
+</body>
+</html>

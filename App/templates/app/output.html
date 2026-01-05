@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ predict | upper }} Prediction</title>
+   
+</head>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f7f6; /* Light grey background for a cleaner look */
+        margin: 0;
+        padding: 0;
+        color: #333;
+    }
+    
+    .top {
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        text-decoration: none;
+        color: #3498db; /* Updated color for a softer blue */
+        font-weight: bold;
+    }
+    
+    .container {
+        width: 85%; /* Slightly wider container */
+        margin: 0 auto;
+    }
+    
+    .card {
+        border-radius: 10px; /* Slightly more rounded corners */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow for more depth */
+        overflow: hidden;
+        margin-bottom: 20px;
+        background-color: #ffffff; /* White background for cards */
+    }
+    
+    .card-content {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .card-content img {
+        max-width: 100%;
+        height: 200px; /* Adjusted height */
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    
+    .card-title {
+        font-size: 1.6em; /* Slightly larger title */
+        font-weight: bold;
+        color: #2c3e50; /* Darker color for better contrast */
+        margin-bottom: 20px;
+    }
+    
+    .section-title {
+        font-size: 1.4em; /* Slightly larger section title */
+        font-weight: bold;
+        color: #3498db; /* Matching blue for consistency */
+        margin-top: 30px; /* More spacing from elements above */
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0; /* Increased margin for better spacing */
+        border: 1px solid #3498db; /* Matching border color */
+        background-color: #ffffff; /* White background for tables */
+    }
+    
+    th, td {
+        padding: 15px; /* Increased padding for better readability */
+        text-align: left;
+        border: 1px solid #e1e1e1; /* Light border for table cells */
+    }
+    
+    th {
+        background-color: #3498db; /* Matching header background */
+        color: #ffffff; /* White text for better contrast */
+        font-weight: bold;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f2f2f2; /* Lighter grey for even rows */
+    }
+    
+    .content {
+        text-align: left;
+        padding: 0 20px;
+    }
+    
+    .content p {
+        margin-bottom: 20px; /* More spacing between paragraphs */
+    }
+    
+    .content .image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+        border-radius: 10px; /* Matching rounded corners */
+    }
+    
+    a.top {
+        display: inline-block;
+        padding: 12px 24px; /* Larger padding for buttons */
+        font-size: 18px; /* Larger font size for readability */
+        text-align: center;
+        text-decoration: none;
+        background-color: #2c3e50; /* Darker background color */
+        color: #ffffff; /* White text color */
+        border: 2px solid #ffffff;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        margin: 20px 0;
+    }
+    
+    a.top:hover {
+        background-color: #34495e; /* Slightly lighter on hover */
+        color: #ffffff;
+    }
+    
+</style>
+<body>
+    <a href="/" class="top">Back to Home</a>
+
+    <div class="container mt-4">
+        <center>
+        <div class="card">
+            <div class="card-content">
+                <img src="{{ obj.image.url }}" alt="Input Image" class="mb-4">
+                <p class="card-title">{{ predicted | upper }}</p>
+            </div>
+        </div>
+    </center>
+
+        {% if obj %}
+            {% if predict == 'AFFECTED_PCOS' %}
+            <div class="section-title">PCOS Overview</div>
+<table border="1" cellspacing="0" cellpadding="10">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Description</strong></td>
+            <td>Polycystic Ovary Syndrome (PCOS) is a common hormonal disorder affecting people with ovaries. It is characterized by irregular menstrual periods, excess androgen levels, and polycystic ovaries.</td>
+        </tr>
+        <tr>
+            <td><strong>Symptoms</strong></td>
+            <td>Irregular periods, excessive hair growth (hirsutism), acne, oily skin, weight gain, thinning hair on the scalp, and difficulty getting pregnant.</td>
+        </tr>
+        <tr>
+            <td><strong>Causes</strong></td>
+            <td>The exact cause of PCOS is unknown, but it is believed to involve a combination of genetic and environmental factors. Insulin resistance and hormonal imbalances are also linked to PCOS.</td>
+        </tr>
+        <tr>
+            <td><strong>Prevention</strong></td>
+            <td>There is no known way to prevent PCOS, but maintaining a healthy weight, eating a balanced diet, and regular exercise may help manage symptoms.</td>
+        </tr>
+        <tr>
+            <td><strong>Precautions</strong></td>
+            <td>Regular medical check-ups, managing weight, monitoring blood sugar levels, and following prescribed treatments to manage symptoms and prevent complications.</td>
+        </tr>
+        <tr>
+            <td><strong>Treatment</strong></td>
+            <td>Treatment options include lifestyle changes (diet and exercise), medications to regulate menstrual cycles and manage symptoms (e.g., birth control pills, metformin), and addressing specific issues like infertility if necessary.</td>
+        </tr>
+        <tr>
+            <th><strong>Time of Day</strong></th>
+            <th><strong>Recommendations</strong></th>
+        </tr>
+        <tr>
+            <td><strong>Morning:</strong></td>
+            <td>Start the day with a balanced breakfast including protein and whole grains.<br> Consider a low glycemic index (GI) diet to help manage blood sugar levels.</td>
+        </tr>
+        <tr>
+            <td><strong>Afternoon:</strong></td>
+            <td>Engage in moderate physical activity, such as brisk walking or light exercises.<br> Have a nutritious lunch with lean proteins, vegetables, and whole grains.</td>
+        </tr>
+        <tr>
+            <td><strong>Night:</strong></td>
+            <td>Eat a light and balanced dinner.<br> Practice relaxation techniques to manage stress.<br> Ensure adequate and quality sleep.</td>
+        </tr>
+        <tr>
+            <th><strong>Additional Recommendations</strong></th>
+            <th><strong>Category</strong><br> <strong>Recommendations</strong></th>
+        </tr>
+        <tr>
+            <td><strong>Physical Activity:</strong></td>
+            <td>Regular moderate exercise, such as walking, swimming, or cycling, is beneficial for managing weight and improving insulin sensitivity.</td>
+        </tr>
+        <tr>
+            <td><strong>Yoga:</strong></td>
+            <td>Incorporate yoga poses that promote relaxation and stress reduction, such as Forward Bend or Legs-Up-The-Wall Pose.</td>
+        </tr>
+        <tr>
+            <td><strong>Vitamins:</strong></td>
+            <td>Consider vitamin supplements such as Vitamin D and Omega-3 fatty acids, but consult with a healthcare provider.</td>
+        </tr>
+        <tr>
+            <td><strong>Fruits:</strong></td>
+            <td>Include fruits like apples, berries, and citrus fruits in your diet for their fiber and antioxidant benefits.</td>
+        </tr>
+    </tbody>
+</table>
+
+            {% elif predict == 'infected_PCOD' %}
+            <div class="section-title">PCOD Overview</div>
+<table border="1" cellspacing="0" cellpadding="10">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Description</strong></td>
+            <td>Polycystic Ovarian Disease (PCOD) is a hormonal disorder causing enlarged ovaries with small cysts on the outer edges. It affects a woman's hormone levels and can lead to irregular menstrual cycles and other health issues.</td>
+        </tr>
+        <tr>
+            <td><strong>Symptoms</strong></td>
+            <td>Irregular periods, excess hair growth, acne, weight gain, thinning hair, and ovarian cysts. Some women may also experience difficulty in getting pregnant.</td>
+        </tr>
+        <tr>
+            <td><strong>Causes</strong></td>
+            <td>The exact cause of PCOD is unknown, but it is believed to be related to hormonal imbalances, genetics, and insulin resistance.</td>
+        </tr>
+        <tr>
+            <td><strong>Prevention</strong></td>
+            <td>Maintaining a healthy weight, regular exercise, and a balanced diet may help manage symptoms and prevent complications.</td>
+        </tr>
+        <tr>
+            <td><strong>Precautions</strong></td>
+            <td>Regular check-ups with a healthcare provider, managing symptoms through lifestyle changes and medications, and monitoring for related health issues such as diabetes or cardiovascular disease.</td>
+        </tr>
+        <tr>
+            <td><strong>Treatment</strong></td>
+            <td>Treatment often includes lifestyle changes, medications to regulate menstrual cycles and hormone levels, and in some cases, fertility treatments if pregnancy is desired.</td>
+        </tr>
+        <tr>
+            <th><strong>Time of Day</strong></th>
+            <th><strong>Recommendations</strong></th>
+        </tr>
+        <tr>
+            <td><strong>Morning:</strong></td>
+            <td>Start the day with a healthy breakfast including protein and fiber.<br> Consider a morning walk or light exercise to boost metabolism.</td>
+        </tr>
+        <tr>
+            <td><strong>Afternoon:</strong></td>
+            <td>Consume a balanced lunch with whole grains, lean protein, and vegetables.<br> Stay hydrated throughout the day.</td>
+        </tr>
+        <tr>
+            <td><strong>Night:</strong></td>
+            <td>Opt for a light, nutritious dinner.<br> Engage in relaxing activities like reading or meditating to manage stress levels.<br> Ensure a good night's sleep.</td>
+        </tr>
+        <tr>
+            <th><strong>Additional Recommendations</strong></th>
+            <th><strong>Category</strong><br> <strong>Recommendations</strong></th>
+        </tr>
+        <tr>
+            <td><strong>Physical Activity:</strong></td>
+            <td>Regular exercise like walking, cycling, or swimming can help manage weight and improve insulin sensitivity.</td>
+        </tr>
+        <tr>
+            <td><strong>Yoga:</strong></td>
+            <td>Yoga poses such as the Bridge Pose or the Child’s Pose can help reduce stress and improve overall well-being.</td>
+        </tr>
+        <tr>
+            <td><strong>Vitamins:</strong></td>
+            <td>Consider supplements like Vitamin D and B-complex vitamins, but consult with a healthcare provider for personalized advice.</td>
+        </tr>
+        <tr>
+            <td><strong>Fruits:</strong></td>
+            <td>Include fruits like berries, apples, and citrus fruits in your diet for their antioxidant and nutritional benefits.</td>
+        </tr>
+    </tbody>
+</table>
+
+            {% elif predict == 'NORMAL_PCOS' %}
+            <div class="section-title">NORMAL PCOS Overview</div>
+<table border="1" cellspacing="0" cellpadding="10">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Description</strong></td>
+            <td>Normal PCOS (Polycystic Ovary Syndrome) is a condition characterized by hormonal imbalance and the presence of multiple cysts on the ovaries. Unlike PCOS with complications, NORMAL PCOS indicates a less severe form with fewer symptoms and a lower risk of associated health issues.</td>
+        </tr>
+        <tr>
+            <td><strong>Symptoms</strong></td>
+            <td>Irregular menstrual cycles, mild acne, slight weight gain, and occasional hair thinning. Symptoms are generally less severe compared to other forms of PCOS.</td>
+        </tr>
+        <tr>
+            <td><strong>Causes</strong></td>
+            <td>The exact cause of NORMAL PCOS is unknown, but it may involve genetic factors, insulin resistance, and hormonal imbalances.</td>
+        </tr>
+        <tr>
+            <td><strong>Prevention</strong></td>
+            <td>Maintaining a healthy lifestyle, including regular exercise and a balanced diet, can help manage symptoms and prevent complications. Regular monitoring by a healthcare provider is also recommended.</td>
+        </tr>
+        <tr>
+            <td><strong>Precautions</strong></td>
+            <td>Regular medical check-ups to monitor hormone levels, avoiding excessive weight gain, and adhering to any prescribed treatments or lifestyle recommendations.</td>
+        </tr>
+        <tr>
+            <td><strong>Treatment</strong></td>
+            <td>Treatment focuses on managing symptoms and may include lifestyle changes, medications to regulate menstrual cycles and reduce acne, and regular monitoring. In some cases, hormonal treatments may be used.</td>
+        </tr>
+        <tr>
+            <th><strong>Time of Day</strong></th>
+            <th><strong>Recommendations</strong></th>
+        </tr>
+        <tr>
+            <td><strong>Morning:</strong></td>
+            <td>Start the day with a healthy breakfast including high-fiber foods.<br> Incorporate a moderate exercise routine such as a morning walk.</td>
+        </tr>
+        <tr>
+            <td><strong>Afternoon:</strong></td>
+            <td>Have a balanced lunch with lean proteins and vegetables.<br> Engage in light physical activities or stretching.</td>
+        </tr>
+        <tr>
+            <td><strong>Night:</strong></td>
+            <td>Eat a light dinner with a focus on whole foods.<br> Practice relaxation techniques such as meditation.<br> Ensure good sleep hygiene and sufficient rest.</td>
+        </tr>
+        <tr>
+            <th><strong>Additional Recommendations</strong></th>
+            <th><strong>Category</strong><br> <strong>Recommendations</strong></th>
+        </tr>
+        <tr>
+            <td><strong>Physical Activity:</strong></td>
+            <td>Engage in regular moderate exercise, such as walking or cycling, to help manage weight and improve overall health.</td>
+        </tr>
+        <tr>
+            <td><strong>Yoga:</strong></td>
+            <td>Gentle yoga poses, such as the Child's Pose or Cat-Cow stretch, can help with stress management and overall well-being.</td>
+        </tr>
+        <tr>
+            <td><strong>Vitamins:</strong></td>
+            <td>Consider vitamin supplements, such as vitamin D and omega-3 fatty acids, but consult with a healthcare provider for personalized recommendations.</td>
+        </tr>
+        <tr>
+            <td><strong>Fruits:</strong></td>
+            <td>Include a variety of fruits, such as apples, berries, and citrus fruits, in your diet for their antioxidant and nutritional benefits.</td>
+        </tr>
+    </tbody>
+</table>
+
+            
+            {% elif predict == 'notinfected_PCOD' %}
+            <div class="section-title">Not Infected PCOD Overview</div>
+<table border="1" cellspacing="0" cellpadding="10">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Description</strong></td>
+            <td>Not infected PCOD refers to a condition where ovarian cysts are present but do not cause any significant symptoms or health issues. This indicates that the condition is not currently affecting the body's overall health.</td>
+        </tr>
+        <tr>
+            <td><strong>Symptoms</strong></td>
+            <td>There may be minimal or no symptoms. If symptoms occur, they might include mild irregular menstrual cycles or occasional ovarian cysts that do not lead to severe health problems.</td>
+        </tr>
+        <tr>
+            <td><strong>Causes</strong></td>
+            <td>The causes of PCOD can include hormonal imbalances, genetic factors, or insulin resistance. However, in the case of "not infected PCOD," these factors do not result in significant health concerns.</td>
+        </tr>
+        <tr>
+            <td><strong>Prevention</strong></td>
+            <td>Maintaining a healthy lifestyle, including regular exercise and a balanced diet, can help manage PCOD. Regular check-ups can ensure the condition remains non-infectious and controlled.</td>
+        </tr>
+        <tr>
+            <td><strong>Precautions</strong></td>
+            <td>Regular monitoring through medical check-ups, maintaining a healthy weight, and managing stress are important. Avoiding known triggers that can exacerbate PCOD symptoms is also advised.</td>
+        </tr>
+        <tr>
+            <td><strong>Treatment</strong></td>
+            <td>Treatment may not be necessary if the PCOD is not causing symptoms. If needed, management could involve lifestyle changes, hormonal treatments, or medications to regulate menstrual cycles and manage any minor symptoms.</td>
+        </tr>
+        <tr>
+            <th><strong>Time of Day</strong></th>
+            <th><strong>Recommendations</strong></th>
+        </tr>
+        <tr>
+            <td><strong>Morning:</strong></td>
+            <td>Start with a glass of water and a healthy breakfast that includes whole grains and protein. Include fruits such as berries for added nutrients.</td>
+        </tr>
+        <tr>
+            <td><strong>Afternoon:</strong></td>
+            <td>Engage in moderate physical activity like walking. Have a balanced lunch with lean proteins and plenty of vegetables.</td>
+        </tr>
+        <tr>
+            <td><strong>Night:</strong></td>
+            <td>Opt for a light dinner and incorporate relaxation techniques such as gentle stretching or reading to wind down. Ensure adequate sleep to support overall well-being.</td>
+        </tr>
+        <tr>
+            <th><strong>Additional Recommendations</strong></th>
+            <th><strong>Category</strong><br> <strong>Recommendations</strong></th>
+        </tr>
+        <tr>
+            <td><strong>Physical Activity:</strong></td>
+            <td>Regular moderate exercise like brisk walking or cycling is beneficial for overall health and can help manage PCOD symptoms.</td>
+        </tr>
+        <tr>
+            <td><strong>Yoga:</strong></td>
+            <td>Gentle yoga poses such as Child's Pose or Cat-Cow stretch can aid in relaxation and support overall hormonal balance.</td>
+        </tr>
+        <tr>
+            <td><strong>Vitamins:</strong></td>
+            <td>Consider a balanced intake of vitamins such as Vitamin D and B-complex to support hormonal health. Consult with a healthcare provider before starting any supplements.</td>
+        </tr>
+        <tr>
+            <td><strong>Fruits:</strong></td>
+            <td>Include a variety of fruits in your diet, such as apples, oranges, and berries, to ensure adequate vitamin and antioxidant intake.</td>
+        </tr>
+    </tbody>
+</table>
+
+            
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>
