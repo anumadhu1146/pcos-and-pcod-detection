@@ -6,11 +6,11 @@ Polycystic Ovary Syndrome (PCOS) and Polycystic Ovarian Disease (PCOD) are commo
 
 This project presents a deep learning-based system using Convolutional Neural Networks (CNN) to automatically analyze ovarian ultrasound images and classify them as:
 
-PCOS
+*PCOS
 
-PCOD
+*PCOD
 
-Normal
+*Normal
 
 The system assists doctors by providing fast, accurate, and automated diagnosis support.
 
@@ -34,13 +34,13 @@ The proposed system uses a CNN-based deep learning model to automatically analyz
 
 **✔ Benefits**
 
-Early detection of PCOS/PCOD
+*Early detection of PCOS/PCOD
 
-Reduced human diagnostic errors
+*Reduced human diagnostic errors
 
-Faster medical decision-making
+*Faster medical decision-making
 
-Support for doctors and healthcare professionals
+*Support for doctors and healthcare professionals
 
 **⭐ Features**
 
@@ -57,27 +57,28 @@ Support for doctors and healthcare professionals
 🏥 Scalable system suitable for hospitals and clinics
 
 **🛠 Technologies Used
+
 ☁ Google Technologies**
 
-Google Colab – Model training and experimentation
+*Google Colab – Model training and experimentation
 
-Google Drive – Dataset storage and management
+*Google Drive – Dataset storage and management
 
-Google Cloud Platform (Optional) – Model deployment
+*Google Cloud Platform (Optional) – Model deployment
 
 **💻 Programming & Frameworks**
 
-Python
+*Python
 
-TensorFlow / Keras
+*TensorFlow / Keras
 
-CNN Architecture
+*CNN Architecture
 
-OpenCV
+*OpenCV
 
-NumPy
+*NumPy
 
-Matplotlib
+*Matplotlib
 
 **🏗 System Architecture**
 
@@ -87,35 +88,35 @@ The system consists of the following modules:
 
 Collects labeled ovarian ultrasound images categorized as:
 
-PCOS
+*PCOS
 
-PCOD
+*PCOD
 
-Normal
+*Normal
 
 2️⃣ Data Preprocessing Module
 
 Image preprocessing techniques include:
 
-Image resizing
+*Image resizing
 
-Noise removal
+*Noise removal
 
-Image normalization
+*Image normalization
 
-Data augmentation
+*Data augmentation
 
 3️⃣ CNN Architecture Module
 
 The CNN model extracts features from images using:
 
-Convolution layers
+*Convolution layers
 
-Pooling layers
+*Pooling layers
 
-Flatten layer
+*Flatten layer
 
-Fully connected layers
+*Fully connected layers
 
 4️⃣ Model Training Module
 
@@ -125,13 +126,13 @@ The model is trained using labeled data and optimized using backpropagation.
 
 Model performance is evaluated using:
 
-Accuracy
+*Accuracy
 
-Precision
+*Precision
 
-Recall
+*Recall
 
-Confusion Matrix
+*Confusion Matrix
 
 6️⃣ Deployment Module
 
@@ -169,15 +170,15 @@ The system predicts one of the following results:
 
 **🚀 Future Enhancements**
 
-Integration with hospital management systems
+*Integration with hospital management systems
 
-Real-time diagnosis support
+*Real-time diagnosis support
 
-Mobile application for remote healthcare
+*Mobile application for remote healthcare
 
-Multilingual interface for rural accessibility
+*Multilingual interface for rural accessibility
 
-Secure patient data handling
+*Secure patient data handling
 
 **📌 Conclusion**
 
