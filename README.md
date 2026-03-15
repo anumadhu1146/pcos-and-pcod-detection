@@ -20,11 +20,11 @@ Detecting PCOS and PCOD using traditional medical analysis can be time-consuming
 
 Manual interpretation of ultrasound images may lead to:
 
-⏳  Slow diagnosis
+⏳ Slow diagnosis
 
-❌  Human errors
+❌ Human errors
 
-📊  Inconsistent results
+📊 Inconsistent results
 
 Therefore, an AI-based automated system is required to analyze ultrasound images and detect PCOS/PCOD patterns efficiently.
 
