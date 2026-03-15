@@ -6,11 +6,11 @@ Polycystic Ovary Syndrome (PCOS) and Polycystic Ovarian Disease (PCOD) are commo
 
 This project presents a deep learning-based system using Convolutional Neural Networks (CNN) to automatically analyze ovarian ultrasound images and classify them as:
 
-*PCOS
+* PCOS
 
-*PCOD
+* PCOD
 
-*Normal
+* Normal
 
 The system assists doctors by providing fast, accurate, and automated diagnosis support.
 
