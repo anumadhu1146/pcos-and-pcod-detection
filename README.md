@@ -1,6 +1,6 @@
-🩺 PCOS and PCOD Detection Using CNN Architecture
+**🩺 PCOS and PCOD Detection Using CNN Architecture**
 
-📌 Project Overview
+**📌 Project Overview**
 
 Polycystic Ovary Syndrome (PCOS) and Polycystic Ovarian Disease (PCOD) are common hormonal disorders affecting women. Early and accurate detection is important for effective treatment and health management.
 
@@ -14,7 +14,7 @@ Normal
 
 The system assists doctors by providing fast, accurate, and automated diagnosis support.
 
-⚠️ Problem Statement
+**⚠️ Problem Statement**
 
 Detecting PCOS and PCOD using traditional medical analysis can be time-consuming and highly dependent on clinical expertise.
 
@@ -28,11 +28,11 @@ Manual interpretation of ultrasound images may lead to:
 
 Therefore, an AI-based automated system is required to analyze ultrasound images and detect PCOS/PCOD patterns efficiently.
 
-💡 Proposed Solution
+**💡 Proposed Solution**
 
 The proposed system uses a CNN-based deep learning model to automatically analyze ovarian ultrasound images and identify cyst patterns related to PCOS/PCOD.
 
-✔ Benefits
+**✔ Benefits**
 
 Early detection of PCOS/PCOD
 
@@ -42,7 +42,7 @@ Faster medical decision-making
 
 Support for doctors and healthcare professionals
 
-⭐ Features
+**⭐ Features**
 
 🤖 Automated CNN-based ultrasound image analysis
 
@@ -56,8 +56,8 @@ Support for doctors and healthcare professionals
 
 🏥 Scalable system suitable for hospitals and clinics
 
-🛠 Technologies Used
-☁ Google Technologies
+**🛠 Technologies Used
+☁ Google Technologies**
 
 Google Colab – Model training and experimentation
 
@@ -65,7 +65,7 @@ Google Drive – Dataset storage and management
 
 Google Cloud Platform (Optional) – Model deployment
 
-💻 Programming & Frameworks
+**💻 Programming & Frameworks**
 
 Python
 
@@ -79,7 +79,7 @@ NumPy
 
 Matplotlib
 
-🏗 System Architecture
+**🏗 System Architecture**
 
 The system consists of the following modules:
 
@@ -141,7 +141,7 @@ The trained model is saved as a .h5 file and integrated into a Django-based web 
 
 Users can upload ultrasound images and receive automated PCOS/PCOD detection results.
 
-🔄 Workflow
+**🔄 Workflow**
 
 📂 Data Collection
 ⬇
@@ -167,7 +167,7 @@ The system predicts one of the following results:
 
 🟢 Normal Ovary
 
-🚀 Future Enhancements
+**🚀 Future Enhancements**
 
 Integration with hospital management systems
 
@@ -179,7 +179,7 @@ Multilingual interface for rural accessibility
 
 Secure patient data handling
 
-📌 Conclusion
+**📌 Conclusion**
 
 This project demonstrates how Artificial Intelligence and Deep Learning can assist in the early detection of PCOS and PCOD.
 
