@@ -5,11 +5,11 @@
 
 This project presents a deep learning-based system using Convolutional Neural Networks (CNN) to automatically analyze ovarian ultrasound images and classify them as:
 
-  PCOS
-
-  PCOD
-
-  Normal
+    PCOS
+  
+    PCOD
+  
+    Normal
 
 The system assists doctors by providing fast, accurate, and automated diagnosis support.
 
