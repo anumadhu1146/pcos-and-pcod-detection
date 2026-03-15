@@ -1,82 +1,82 @@
 🩺 PCOS and PCOD Detection Using CNN Architecture
 📌 Project Overview
 
-Polycystic Ovary Syndrome (PCOS) and Polycystic Ovarian Disease (PCOD) are common hormonal disorders affecting women. Early and accurate detection is important for effective treatment and health management.
+  Polycystic Ovary Syndrome (PCOS) and Polycystic Ovarian Disease (PCOD) are common hormonal disorders affecting women. Early and accurate detection is important for effective treatment and health management.
 
 This project presents a deep learning-based system using Convolutional Neural Networks (CNN) to automatically analyze ovarian ultrasound images and classify them as:
 
-PCOS
+  PCOS
 
-PCOD
+  PCOD
 
-Normal
+  Normal
 
 The system assists doctors by providing fast, accurate, and automated diagnosis support.
 
 ⚠️ Problem Statement
 
-Detecting PCOS and PCOD using traditional medical analysis can be time-consuming and highly dependent on clinical expertise.
+   Detecting PCOS and PCOD using traditional medical analysis can be time-consuming and highly dependent on clinical expertise.
 
 Manual interpretation of ultrasound images may lead to:
 
-⏳ Slow diagnosis
+   ⏳ Slow diagnosis
 
-❌ Human errors
+   ❌ Human errors
 
-📊 Inconsistent results
+   📊 Inconsistent results
 
 Therefore, an AI-based automated system is required to analyze ultrasound images and detect PCOS/PCOD patterns efficiently.
 
 💡 Proposed Solution
 
-The proposed system uses a CNN-based deep learning model to automatically analyze ovarian ultrasound images and identify cyst patterns related to PCOS/PCOD.
+  The proposed system uses a CNN-based deep learning model to automatically analyze ovarian ultrasound images and identify cyst patterns related to PCOS/PCOD.
 
 ✔ Benefits
 
-Early detection of PCOS/PCOD
+   Early detection of PCOS/PCOD
 
-Reduced human diagnostic errors
+   Reduced human diagnostic errors
 
-Faster medical decision-making
+   Faster medical decision-making
 
 Support for doctors and healthcare professionals
 
-⭐ Features
+  ⭐ Features
 
-🤖 Automated CNN-based ultrasound image analysis
+  🤖 Automated CNN-based ultrasound image analysis
 
-🔍 Early and reliable PCOS/PCOD detection
+  🔍 Early and reliable PCOS/PCOD detection
 
-⚡ Fast classification of images (PCOS / PCOD / Normal)
+  ⚡ Fast classification of images (PCOS / PCOD / Normal)
 
-📈 Improved accuracy using data augmentation
+  📈 Improved accuracy using data augmentation
 
-🎯 Consistent and unbiased diagnostic results
+  🎯 Consistent and unbiased diagnostic results
 
-🏥 Scalable system suitable for hospitals and clinics
+  🏥 Scalable system suitable for hospitals and clinics
 
-🛠 Technologies Used
+  🛠 Technologies Used
 ☁ Google Technologies
 
-Google Colab – Model training and experimentation
-
-Google Drive – Dataset storage and management
-
-Google Cloud Platform (Optional) – Model deployment
+  Google Colab – Model training and experimentation
+  
+  Google Drive – Dataset storage and management
+  
+  Google Cloud Platform (Optional) – Model deployment
 
 💻 Programming & Frameworks
 
-Python
-
-TensorFlow / Keras
-
-CNN Architecture
-
-OpenCV
-
-NumPy
-
-Matplotlib
+  Python
+  
+  TensorFlow / Keras
+  
+  CNN Architecture
+  
+  OpenCV
+  
+  NumPy
+  
+  Matplotlib
 
 🏗 System Architecture
 
